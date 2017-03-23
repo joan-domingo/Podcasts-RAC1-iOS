@@ -6,37 +6,49 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Podcasts RAC1 - No oficial-->
         <scene sceneID="Ajl-CV-3xx">
             <objects>
                 <tableViewController id="8Dw-Im-Qnb" customClass="ProgramViewController" customModule="Random1" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="u89-qr-514">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="u89-qr-514">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgramTableViewCell" rowHeight="80" id="q7u-yh-a1z" customClass="ProgramTableViewCell" customModule="Random1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgramTableViewCell" rowHeight="90" id="q7u-yh-a1z" customClass="ProgramTableViewCell" customModule="Random1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q7u-yh-a1z" id="7lO-ZI-YYM">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="second" translatesAutoresizingMaskIntoConstraints="NO" id="XkY-qu-xOh">
-                                            <rect key="frame" x="8" y="-1" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XkY-qu-xOh">
+                                            <rect key="frame" x="3" y="3" width="84" height="84"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="XkY-qu-xOh" secondAttribute="height" id="Z5g-wo-yGR"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTV-Pv-3r6">
-                                            <rect key="frame" x="95" y="8" width="272" height="63"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTV-Pv-3r6">
+                                            <rect key="frame" x="90" y="3" width="282" height="83"/>
+                                            <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="CTV-Pv-3r6" firstAttribute="leading" secondItem="XkY-qu-xOh" secondAttribute="trailing" constant="3" id="4QN-TB-KjZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="CTV-Pv-3r6" secondAttribute="trailing" constant="3" id="SLS-dQ-sBO"/>
+                                        <constraint firstItem="XkY-qu-xOh" firstAttribute="leading" secondItem="7lO-ZI-YYM" secondAttribute="leading" constant="3" id="VAu-bl-Ok7"/>
+                                        <constraint firstAttribute="bottom" secondItem="CTV-Pv-3r6" secondAttribute="bottom" constant="3" id="bK4-T4-ROc"/>
+                                        <constraint firstAttribute="bottom" secondItem="XkY-qu-xOh" secondAttribute="bottom" constant="3" id="e3A-D1-mSh"/>
+                                        <constraint firstItem="CTV-Pv-3r6" firstAttribute="top" secondItem="7lO-ZI-YYM" secondAttribute="top" constant="3" id="fb6-87-mnd"/>
+                                        <constraint firstItem="XkY-qu-xOh" firstAttribute="top" secondItem="7lO-ZI-YYM" secondAttribute="top" constant="3" id="htI-Dx-fB8"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="programImageView" destination="XkY-qu-xOh" id="6Wd-gZ-Qcf"/>
@@ -50,11 +62,11 @@
                             <outlet property="delegate" destination="8Dw-Im-Qnb" id="klN-xt-NHE"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="l7t-EH-Q5p"/>
+                    <navigationItem key="navigationItem" title="Podcasts RAC1 - No oficial" id="Lms-mO-i1z"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CkV-Ux-lM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784.79999999999995" y="-316.19190404797604"/>
+            <point key="canvasLocation" x="1724" y="-316.19190404797604"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -107,13 +119,32 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8Dw-Im-Qnb" kind="relationship" relationship="viewControllers" id="vF1-Sm-xfO"/>
+                        <segue destination="Hdz-WQ-gG8" kind="relationship" relationship="viewControllers" id="vF1-Sm-xfO"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--First-->
+        <scene sceneID="S9o-9L-a8d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hdz-WQ-gG8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="l7t-EH-Q5p"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="laf-bv-vx8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Dw-Im-Qnb" kind="relationship" relationship="rootViewController" id="tzA-OV-jj7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17E-Jl-V4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784.79999999999995" y="-316.19190404797604"/>
         </scene>
     </scenes>
     <resources>

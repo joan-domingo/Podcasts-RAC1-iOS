@@ -13,11 +13,11 @@ class Program: NSObject {
     //MARK: Properties
     
     var name: String
-    var photo: UIImage?
+    var imageUrl: URL
     
     //MARK: Initialization
     
-    init?(name: String, photo: UIImage?) {
+    init?(name: String, imageUrl: String) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -26,7 +26,7 @@ class Program: NSObject {
         
         // Initialize stored properties.
         self.name = name
-        self.photo = photo
+        self.imageUrl = URL(string: imageUrl)!
     }
     
 }

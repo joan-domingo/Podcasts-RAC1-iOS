@@ -11,13 +11,18 @@ import UIKit
 class Program: NSObject {
     
     //MARK: Properties
-    
+    var id: String
     var name: String
     var imageUrl: URL
     
     //MARK: Initialization
     
-    init?(name: String, imageUrl: String) {
+    init?(id: String, name: String, imageUrl: String) {
+        
+        // The id must not be empty
+        guard !id.isEmpty else {
+            return nil
+        }
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -25,6 +30,7 @@ class Program: NSObject {
         }
         
         // Initialize stored properties.
+        self.id = id
         self.name = name
         self.imageUrl = URL(string: imageUrl)!
     }

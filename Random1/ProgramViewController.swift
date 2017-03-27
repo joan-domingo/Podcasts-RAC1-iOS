@@ -57,6 +57,38 @@ class ProgramViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "ShowPodcasts":
+            
+            guard let hourPodcastsViewController = segue.destination as? HourPodcastsViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedProgramCell = sender as? ProgramTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedProgramCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedProgram = programs[indexPath.row]
+            hourPodcastsViewController.program = selectedProgram
+            
+            print("showing podcasts of ", selectedProgram.name)
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
+    }
+    
     //MARK: Private Methods
     
     private func loadPrograms() {
@@ -67,7 +99,7 @@ class ProgramViewController: UITableViewController {
             case .success(let value):
                 
                 for jsonProgram in JSON(value)["result"].array! {
-                    let program = Program(name: jsonProgram["title"].string!, imageUrl: jsonProgram["images"]["person-small"].string!)
+                    let program = Program(id: jsonProgram["id"].string!, name: jsonProgram["title"].string!, imageUrl: jsonProgram["images"]["person-small"].string!)
                     self.programs.append(program!)
                 }
                 

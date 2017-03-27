@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Podcasts RAC1 - No oficial-->
+        <!--Programs-->
         <scene sceneID="Ajl-CV-3xx">
             <objects>
                 <tableViewController id="8Dw-Im-Qnb" customClass="ProgramViewController" customModule="Random1" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,13 +27,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XkY-qu-xOh">
-                                            <rect key="frame" x="3" y="3" width="84" height="84"/>
+                                            <rect key="frame" x="3" y="3" width="83" height="83"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="XkY-qu-xOh" secondAttribute="height" id="Z5g-wo-yGR"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTV-Pv-3r6">
-                                            <rect key="frame" x="90" y="3" width="282" height="83"/>
+                                            <rect key="frame" x="89" y="3" width="283" height="83"/>
                                             <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -53,6 +53,7 @@
                                 <connections>
                                     <outlet property="programImageView" destination="XkY-qu-xOh" id="6Wd-gZ-Qcf"/>
                                     <outlet property="programNameLabel" destination="CTV-Pv-3r6" id="hBR-wE-vka"/>
+                                    <segue destination="22j-NH-VuE" kind="show" identifier="ShowPodcasts" id="5k2-iN-3DO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -62,11 +63,56 @@
                             <outlet property="delegate" destination="8Dw-Im-Qnb" id="klN-xt-NHE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Podcasts RAC1 - No oficial" id="Lms-mO-i1z"/>
+                    <navigationItem key="navigationItem" title="Programs" id="Lms-mO-i1z"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CkV-Ux-lM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="-316.19190404797604"/>
+            <point key="canvasLocation" x="1695" y="-316"/>
+        </scene>
+        <!--Hour Podcasts View Controller-->
+        <scene sceneID="OdO-rO-cvB">
+            <objects>
+                <tableViewController id="22j-NH-VuE" customClass="HourPodcastsViewController" customModule="Random1" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ndp-ij-QtF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PodcastTableViewCell" id="lTa-yw-URz" customClass="PodcastTableViewCell" customModule="Random1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lTa-yw-URz" id="UoO-7h-op1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncg-NO-MBe">
+                                            <rect key="frame" x="3" y="3" width="369" height="37"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ncg-NO-MBe" firstAttribute="top" secondItem="UoO-7h-op1" secondAttribute="top" constant="3" id="UfO-IA-IKl"/>
+                                        <constraint firstAttribute="trailing" secondItem="ncg-NO-MBe" secondAttribute="trailing" constant="3" id="eDT-UK-dCT"/>
+                                        <constraint firstAttribute="bottom" secondItem="ncg-NO-MBe" secondAttribute="bottom" constant="3" id="exc-kk-eQh"/>
+                                        <constraint firstItem="ncg-NO-MBe" firstAttribute="leading" secondItem="UoO-7h-op1" secondAttribute="leading" constant="3" id="ilR-Gv-ZaJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="podcastTitleLabel" destination="ncg-NO-MBe" id="ZKv-tO-7S2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="22j-NH-VuE" id="xsn-fn-ymE"/>
+                            <outlet property="delegate" destination="22j-NH-VuE" id="g0t-Sx-Q1B"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXb-1d-bIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2641" y="-316"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -81,14 +127,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="83" y="313" width="209.5" height="41.5"/>
+                                <rect key="frame" x="83" y="313" width="210" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="362.5" width="215" height="17"/>
+                                <rect key="frame" x="80" y="363" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>

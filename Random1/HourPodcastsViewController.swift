@@ -10,8 +10,6 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
-import AVKit
-import AVFoundation
 
 class HourPodcastsViewController: UITableViewController {
     
@@ -74,9 +72,9 @@ class HourPodcastsViewController: UITableViewController {
             
         case "PlayPodcast":
             
-            /*guard let audioPlayerViewController = segue.destination as? AudioPlayerViewController else {
+            guard let customAVPlayerViewController = segue.destination as? CustomAVPlayerViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
-            }*/
+            }
             
             guard let selectedPodcastCell = sender as? PodcastTableViewCell else {
                 fatalError("Unexpected sender: \(String(describing: sender))")
@@ -86,25 +84,9 @@ class HourPodcastsViewController: UITableViewController {
                 fatalError("The selected cell is not being displayed by the table")
             }
             
-            guard let avPlayerViewController = segue.destination as? AVPlayerViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            
             let selectedPodcast = podcasts[indexPath.row]
-            avPlayerViewController.player = AVPlayer(url: selectedPodcast.audioUrl)
-            
-            /*let albumArt = UIImageView()
-            albumArt.kf.setImage(with: selectedPodcast.imageUrl)
-            //let albumArt = UIImageView(image: UIImage(...))
-            avPlayerViewController.contentOverlayView?.addSubview(albumArt)*/
-            
-            /*let label = UILabel()
-            label.text = "TEST"
-            label.textColor = UIColor.white
-            label.sizeToFit()
-            avPlayerViewController.contentOverlayView?.addSubview(label)*/
-                
-            avPlayerViewController.player?.play()
+            customAVPlayerViewController.imageUrl = selectedPodcast.imageUrl
+            customAVPlayerViewController.audioUrl = selectedPodcast.audioUrl
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")

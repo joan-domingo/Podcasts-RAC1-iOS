@@ -16,6 +16,7 @@
 		9A9443541E818A7800BE3AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9443531E818A7800BE3AFF /* Assets.xcassets */; };
 		9A9443571E818A7800BE3AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9443551E818A7800BE3AFF /* LaunchScreen.storyboard */; };
 		9A9443621E818A7900BE3AFF /* Random1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9443611E818A7900BE3AFF /* Random1Tests.swift */; };
+		9AB0B4B71E8A8B2D00B9D268 /* CustomAVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB0B4B61E8A8B2D00B9D268 /* CustomAVPlayerViewController.swift */; };
 		9AE5B7421E892C7700741548 /* HourPodcastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE5B7411E892C7700741548 /* HourPodcastsViewController.swift */; };
 		9AE5B7441E8932F800741548 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE5B7431E8932F800741548 /* Podcast.swift */; };
 		9AE5B7461E89338900741548 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE5B7451E89338900741548 /* PodcastTableViewCell.swift */; };
@@ -52,6 +53,7 @@
 		9A94435D1E818A7900BE3AFF /* Random1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Random1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9443611E818A7900BE3AFF /* Random1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random1Tests.swift; sourceTree = "<group>"; };
 		9A9443631E818A7900BE3AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AB0B4B61E8A8B2D00B9D268 /* CustomAVPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAVPlayerViewController.swift; sourceTree = "<group>"; };
 		9AE5B7411E892C7700741548 /* HourPodcastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourPodcastsViewController.swift; sourceTree = "<group>"; };
 		9AE5B7431E8932F800741548 /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		9AE5B7451E89338900741548 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				9A94434C1E818A7800BE3AFF /* ProgramViewController.swift */,
 				9AE5B7411E892C7700741548 /* HourPodcastsViewController.swift */,
+				9AB0B4B61E8A8B2D00B9D268 /* CustomAVPlayerViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				9A94434B1E818A7800BE3AFF /* AppDelegate.swift in Sources */,
 				9AE5B7461E89338900741548 /* PodcastTableViewCell.swift in Sources */,
 				9A94434D1E818A7800BE3AFF /* ProgramViewController.swift in Sources */,
+				9AB0B4B71E8A8B2D00B9D268 /* CustomAVPlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

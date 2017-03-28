@@ -72,7 +72,7 @@ class ProgramViewController: UITableViewController {
             }
             
             guard let selectedProgramCell = sender as? ProgramTableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(String(describing: sender))")
             }
             
             guard let indexPath = tableView.indexPath(for: selectedProgramCell) else {
@@ -82,10 +82,8 @@ class ProgramViewController: UITableViewController {
             let selectedProgram = programs[indexPath.row]
             hourPodcastsViewController.program = selectedProgram
             
-            print("showing podcasts of ", selectedProgram.name)
-            
         default:
-            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
     
@@ -99,7 +97,9 @@ class ProgramViewController: UITableViewController {
             case .success(let value):
                 
                 for jsonProgram in JSON(value)["result"].array! {
-                    let program = Program(id: jsonProgram["id"].string!, name: jsonProgram["title"].string!, imageUrl: jsonProgram["images"]["person-small"].string!)
+                    let program = Program(id: jsonProgram["id"].string!,
+                                          name: jsonProgram["title"].string!,
+                                          imageUrl: jsonProgram["images"]["person-small"].string!)
                     self.programs.append(program!)
                 }
                 

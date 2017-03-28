@@ -12,6 +12,7 @@ class PodcastTableViewCell: UITableViewCell {
 
     //MARK: Properties
     @IBOutlet weak var podcastTitleLabel: UILabel!
+    @IBOutlet weak var podcastImageView: UIImageView!
     
     
     override func awakeFromNib() {

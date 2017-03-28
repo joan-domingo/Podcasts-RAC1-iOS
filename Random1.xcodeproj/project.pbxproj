@@ -12,7 +12,6 @@
 		9A38E4F01E82C4A50040B99E /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38E4EF1E82C4A50040B99E /* Program.swift */; };
 		9A94434B1E818A7800BE3AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A94434A1E818A7800BE3AFF /* AppDelegate.swift */; };
 		9A94434D1E818A7800BE3AFF /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A94434C1E818A7800BE3AFF /* ProgramViewController.swift */; };
-		9A94434F1E818A7800BE3AFF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A94434E1E818A7800BE3AFF /* SecondViewController.swift */; };
 		9A9443521E818A7800BE3AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9443501E818A7800BE3AFF /* Main.storyboard */; };
 		9A9443541E818A7800BE3AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9443531E818A7800BE3AFF /* Assets.xcassets */; };
 		9A9443571E818A7800BE3AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9443551E818A7800BE3AFF /* LaunchScreen.storyboard */; };
@@ -20,6 +19,8 @@
 		9AE5B7421E892C7700741548 /* HourPodcastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE5B7411E892C7700741548 /* HourPodcastsViewController.swift */; };
 		9AE5B7441E8932F800741548 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE5B7431E8932F800741548 /* Podcast.swift */; };
 		9AE5B7461E89338900741548 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE5B7451E89338900741548 /* PodcastTableViewCell.swift */; };
+		9AE5B74E1E896E5700741548 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE5B74D1E896E5700741548 /* AVFoundation.framework */; };
+		9AE5B7501E896E6200741548 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE5B74F1E896E6200741548 /* AVKit.framework */; };
 		BBD04A7BD63E95D75B7A5EF6 /* Pods_Random1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075F543A7AC8128121B45B3D /* Pods_Random1.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +45,6 @@
 		9A9443471E818A7800BE3AFF /* Random1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A94434A1E818A7800BE3AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A94434C1E818A7800BE3AFF /* ProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
-		9A94434E1E818A7800BE3AFF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9A9443511E818A7800BE3AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A9443531E818A7800BE3AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A9443561E818A7800BE3AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +55,8 @@
 		9AE5B7411E892C7700741548 /* HourPodcastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourPodcastsViewController.swift; sourceTree = "<group>"; };
 		9AE5B7431E8932F800741548 /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		9AE5B7451E89338900741548 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
+		9AE5B74D1E896E5700741548 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9AE5B74F1E896E6200741548 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		D27B2A5CFB8EED9FDA702506 /* Pods-Random1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random1Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Random1Tests/Pods-Random1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE5B7501E896E6200741548 /* AVKit.framework in Frameworks */,
+				9AE5B74E1E896E5700741548 /* AVFoundation.framework in Frameworks */,
 				BBD04A7BD63E95D75B7A5EF6 /* Pods_Random1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,7 +149,6 @@
 		9A94436E1E8191AB00BE3AFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9A94434E1E818A7800BE3AFF /* SecondViewController.swift */,
 				9A94434C1E818A7800BE3AFF /* ProgramViewController.swift */,
 				9AE5B7411E892C7700741548 /* HourPodcastsViewController.swift */,
 			);
@@ -169,6 +172,8 @@
 		9B5DA2D3AA55D1D683DBA361 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AE5B74F1E896E6200741548 /* AVKit.framework */,
+				9AE5B74D1E896E5700741548 /* AVFoundation.framework */,
 				075F543A7AC8128121B45B3D /* Pods_Random1.framework */,
 				411FF3905E7FD2DB3D62E0EE /* Pods_Random1Tests.framework */,
 			);
@@ -393,7 +398,6 @@
 				9AE5B7441E8932F800741548 /* Podcast.swift in Sources */,
 				9A38E4EE1E82BA4C0040B99E /* ProgramTableViewCell.swift in Sources */,
 				9AE5B7421E892C7700741548 /* HourPodcastsViewController.swift in Sources */,
-				9A94434F1E818A7800BE3AFF /* SecondViewController.swift in Sources */,
 				9A94434B1E818A7800BE3AFF /* AppDelegate.swift in Sources */,
 				9AE5B7461E89338900741548 /* PodcastTableViewCell.swift in Sources */,
 				9A94434D1E818A7800BE3AFF /* ProgramViewController.swift in Sources */,

@@ -21,10 +21,15 @@ class HourPodcastsViewController: UITableViewController {
     var program: Program?
     
     var podcasts = [Podcast]()
+    var strLabel = UILabel()
+    var messageFrame = UIView()
+    var activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //show activity indicator
+        progressBarDisplayer(msg: "Loading Data", true)
         
         loadPodcasts()
     }
@@ -114,7 +119,29 @@ class HourPodcastsViewController: UITableViewController {
             case .failure(let error):
                 print(error)
             }
+            self.hideProgressBar()
         }
+    }
+    
+    func progressBarDisplayer(msg: String, _ indicator:Bool ) {
+        strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 200, height: 50))
+        strLabel.text = msg
+        strLabel.textColor = UIColor.white
+        messageFrame = UIView(frame: CGRect(x: view.frame.midX - 90, y: view.frame.midY - 25 , width: 180, height: 50))
+        messageFrame.layer.cornerRadius = 15
+        messageFrame.backgroundColor = UIColor(white: 0, alpha: 0.7)
+        if indicator {
+            activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            activityIndicator.startAnimating()
+            messageFrame.addSubview(activityIndicator)
+        }
+        messageFrame.addSubview(strLabel)
+        view.addSubview(messageFrame)
+    }
+    
+    func hideProgressBar()  {
+        messageFrame.removeFromSuperview()
     }
     
 }

@@ -21,9 +21,6 @@ class ProgramViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //show activity indicator
-        progressBarDisplayer()
-        
         loadPrograms()
     }
 
@@ -93,8 +90,11 @@ class ProgramViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadPrograms() {
+        progressBarDisplayer()
         
         Alamofire.request("http://www.rac1.cat/audioteca/api/app/v1/programs").validate().responseJSON { response in
+            self.hideProgressBar()
+            
             switch response.result {
                 
             case .success(let value):
@@ -109,9 +109,14 @@ class ProgramViewController: UITableViewController {
                 self.tableView.reloadData()
                 
             case .failure(let error):
-                print(error)
+                let alertController = UIAlertController(title: NSLocalizedString("Error", comment: "Network error"), message: error.localizedDescription, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: NSLocalizedString("Retry", comment: "Retry loading remote data"), style: .default, handler: {
+                    (alert: UIAlertAction!) in self.loadPrograms()
+                })
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true)
             }
-            self.hideProgressBar()
         }
     }
     

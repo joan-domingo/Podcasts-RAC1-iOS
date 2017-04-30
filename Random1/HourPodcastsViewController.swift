@@ -27,9 +27,6 @@ class HourPodcastsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //show activity indicator
-        progressBarDisplayer(msg: "Loading Data", true)
-        
         loadPodcasts()
     }
     
@@ -100,8 +97,11 @@ class HourPodcastsViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadPodcasts() {
+        progressBarDisplayer()
         
         Alamofire.request("http://www.rac1.cat/audioteca/api/app/v1/sessions/" + (program?.id)!).validate().responseJSON { response in
+            self.hideProgressBar()
+            
             switch response.result {
                 
             case .success(let value):
@@ -116,13 +116,18 @@ class HourPodcastsViewController: UITableViewController {
                 self.tableView.reloadData()
                 
             case .failure(let error):
-                print(error)
+                let alertController = UIAlertController(title: NSLocalizedString("Error", comment: "Network error"), message: error.localizedDescription, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: NSLocalizedString("Retry", comment: "Retry loading remote data"), style: .default, handler: {
+                    (alert: UIAlertAction!) in self.loadPodcasts()
+                })
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true)
             }
-            self.hideProgressBar()
         }
     }
     
-    func progressBarDisplayer(msg: String, _ indicator:Bool ) {
+    func progressBarDisplayer() {
         messageFrame = UIView(frame: CGRect(x: view.frame.midX - 25, y: view.frame.midY - 25 , width: 50, height: 50))
         messageFrame.layer.cornerRadius = 15
         messageFrame.backgroundColor = UIColor(white: 0, alpha: 0.7)

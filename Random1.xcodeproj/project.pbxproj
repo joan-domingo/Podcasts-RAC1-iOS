@@ -122,8 +122,6 @@
 			children = (
 				9A94436C1E81919800BE3AFF /* Models */,
 				9A38E4EC1E82B9DA0040B99E /* View */,
-				9A9443701E8191BA00BE3AFF /* Helpers */,
-				9A94436F1E8191B300BE3AFF /* Stores */,
 				9A94436E1E8191AB00BE3AFF /* Controllers */,
 				9A94434A1E818A7800BE3AFF /* AppDelegate.swift */,
 				9A9443551E818A7800BE3AFF /* LaunchScreen.storyboard */,
@@ -160,20 +158,6 @@
 				9AB0B4B61E8A8B2D00B9D268 /* CustomAVPlayerViewController.swift */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		9A94436F1E8191B300BE3AFF /* Stores */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Stores;
-			sourceTree = "<group>";
-		};
-		9A9443701E8191BA00BE3AFF /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Helpers;
 			sourceTree = "<group>";
 		};
 		9B5DA2D3AA55D1D683DBA361 /* Frameworks */ = {

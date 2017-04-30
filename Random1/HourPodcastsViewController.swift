@@ -21,7 +21,6 @@ class HourPodcastsViewController: UITableViewController {
     var program: Program?
     
     var podcasts = [Podcast]()
-    var strLabel = UILabel()
     var messageFrame = UIView()
     var activityIndicator = UIActivityIndicatorView()
     
@@ -124,19 +123,15 @@ class HourPodcastsViewController: UITableViewController {
     }
     
     func progressBarDisplayer(msg: String, _ indicator:Bool ) {
-        strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 200, height: 50))
-        strLabel.text = msg
-        strLabel.textColor = UIColor.white
-        messageFrame = UIView(frame: CGRect(x: view.frame.midX - 90, y: view.frame.midY - 25 , width: 180, height: 50))
+        messageFrame = UIView(frame: CGRect(x: view.frame.midX - 25, y: view.frame.midY - 25 , width: 50, height: 50))
         messageFrame.layer.cornerRadius = 15
         messageFrame.backgroundColor = UIColor(white: 0, alpha: 0.7)
-        if indicator {
-            activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
-            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-            activityIndicator.startAnimating()
-            messageFrame.addSubview(activityIndicator)
-        }
-        messageFrame.addSubview(strLabel)
+        
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.startAnimating()
+        
+        messageFrame.addSubview(activityIndicator)
         view.addSubview(messageFrame)
     }
     

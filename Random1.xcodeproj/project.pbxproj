@@ -41,6 +41,10 @@
 		411FF3905E7FD2DB3D62E0EE /* Pods_Random1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Random1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E1BD45609988EF364B00C6 /* Pods-Random1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Random1/Pods-Random1.debug.xcconfig"; sourceTree = "<group>"; };
 		4B8048AD79FE314A745C6FCA /* Pods-Random1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Random1/Pods-Random1.release.xcconfig"; sourceTree = "<group>"; };
+		5720C68E1EB6083D006B85E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5720C68F1EB6083E006B85E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		5720C6901EB60849006B85E4 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5720C6911EB60849006B85E4 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Main.strings; sourceTree = "<group>"; };
 		9A38E4ED1E82BA4C0040B99E /* ProgramTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramTableViewCell.swift; sourceTree = "<group>"; };
 		9A38E4EF1E82C4A50040B99E /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		9A9443471E818A7800BE3AFF /* Random1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -431,6 +435,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				9A9443511E818A7800BE3AFF /* Base */,
+				5720C68F1EB6083E006B85E4 /* es */,
+				5720C6911EB60849006B85E4 /* ca */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -439,6 +445,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				9A9443561E818A7800BE3AFF /* Base */,
+				5720C68E1EB6083D006B85E4 /* es */,
+				5720C6901EB60849006B85E4 /* ca */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -450,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -500,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

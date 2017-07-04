@@ -16,7 +16,7 @@ class HourPodcastsViewController: UITableViewController {
     //MARK: Properties
     
     /*
-     This value is passed by `ProgramViewController` in `prepare(for:sender:)`.
+     This value is passed by `ProgramsViewController` in `prepare(for:sender:)`.
      */
     var program: Program?
     

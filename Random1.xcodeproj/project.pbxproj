@@ -10,11 +10,16 @@
 		5720C6991EB64354006B85E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5720C69B1EB64354006B85E4 /* Localizable.strings */; };
 		5720C69E1EB64355006B85E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5720C6A01EB64355006B85E4 /* InfoPlist.strings */; };
 		5720C6A31EB64356006B85E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5720C6A51EB64356006B85E4 /* InfoPlist.strings */; };
+		57C24C0E1F055D400040B399 /* ProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C24C0D1F055D400040B399 /* ProgramsViewModel.swift */; };
+		57C24C101F0A3D3A0040B399 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C24C0F1F0A3D3A0040B399 /* TabBarController.swift */; };
+		57C24C131F0A44A50040B399 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C24C121F0A44A50040B399 /* NavigationController.swift */; };
+		57C24C151F0A67A90040B399 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C24C141F0A67A90040B399 /* DownloadsViewController.swift */; };
+		57C24C251F0B953E0040B399 /* ProgramsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C24C241F0B953E0040B399 /* ProgramsInteractor.swift */; };
 		843C6FAE5F5E6A53F15EAA92 /* Pods_Random1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411FF3905E7FD2DB3D62E0EE /* Pods_Random1Tests.framework */; };
 		9A38E4EE1E82BA4C0040B99E /* ProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38E4ED1E82BA4C0040B99E /* ProgramTableViewCell.swift */; };
 		9A38E4F01E82C4A50040B99E /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38E4EF1E82C4A50040B99E /* Program.swift */; };
 		9A94434B1E818A7800BE3AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A94434A1E818A7800BE3AFF /* AppDelegate.swift */; };
-		9A94434D1E818A7800BE3AFF /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A94434C1E818A7800BE3AFF /* ProgramViewController.swift */; };
+		9A94434D1E818A7800BE3AFF /* ProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A94434C1E818A7800BE3AFF /* ProgramsViewController.swift */; };
 		9A9443521E818A7800BE3AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9443501E818A7800BE3AFF /* Main.storyboard */; };
 		9A9443541E818A7800BE3AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9443531E818A7800BE3AFF /* Assets.xcassets */; };
 		9A9443571E818A7800BE3AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9443551E818A7800BE3AFF /* LaunchScreen.storyboard */; };
@@ -54,11 +59,16 @@
 		5720C6A61EB6437A006B85E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5720C6A71EB6437A006B85E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5720C6A81EB6437A006B85E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		57C24C0D1F055D400040B399 /* ProgramsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramsViewModel.swift; sourceTree = "<group>"; };
+		57C24C0F1F0A3D3A0040B399 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		57C24C121F0A44A50040B399 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		57C24C141F0A67A90040B399 /* DownloadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		57C24C241F0B953E0040B399 /* ProgramsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramsInteractor.swift; sourceTree = "<group>"; };
 		9A38E4ED1E82BA4C0040B99E /* ProgramTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramTableViewCell.swift; sourceTree = "<group>"; };
 		9A38E4EF1E82C4A50040B99E /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		9A9443471E818A7800BE3AFF /* Random1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A94434A1E818A7800BE3AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A94434C1E818A7800BE3AFF /* ProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
+		9A94434C1E818A7800BE3AFF /* ProgramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsViewController.swift; sourceTree = "<group>"; };
 		9A9443511E818A7800BE3AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A9443531E818A7800BE3AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A9443561E818A7800BE3AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,6 +107,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57C24C0A1F0551900040B399 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9AE5B7431E8932F800741548 /* Podcast.swift */,
+				9A38E4EF1E82C4A50040B99E /* Program.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		57C24C0B1F0551B80040B399 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				57C24C0C1F055D230040B399 /* ViewModel */,
+				9A38E4EC1E82B9DA0040B99E /* View */,
+				9A94436E1E8191AB00BE3AFF /* Controllers */,
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
+		57C24C0C1F055D230040B399 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				57C24C0D1F055D400040B399 /* ProgramsViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		57C24C221F0B95120040B399 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				57C24C241F0B953E0040B399 /* ProgramsInteractor.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		57C24C231F0B951E0040B399 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
 		9A38E4EC1E82B9DA0040B99E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,16 +181,15 @@
 		9A9443491E818A7800BE3AFF /* Random1 */ = {
 			isa = PBXGroup;
 			children = (
-				5720C6A01EB64355006B85E4 /* InfoPlist.strings */,
-				5720C69B1EB64354006B85E4 /* Localizable.strings */,
-				9A94436C1E81919800BE3AFF /* Models */,
-				9A38E4EC1E82B9DA0040B99E /* View */,
-				9A94436E1E8191AB00BE3AFF /* Controllers */,
-				9A94434A1E818A7800BE3AFF /* AppDelegate.swift */,
 				9A9443551E818A7800BE3AFF /* LaunchScreen.storyboard */,
 				9A9443501E818A7800BE3AFF /* Main.storyboard */,
+				5720C69B1EB64354006B85E4 /* Localizable.strings */,
+				5720C6A01EB64355006B85E4 /* InfoPlist.strings */,
 				9A9443531E818A7800BE3AFF /* Assets.xcassets */,
 				9A9443581E818A7800BE3AFF /* Info.plist */,
+				9A94434A1E818A7800BE3AFF /* AppDelegate.swift */,
+				9A94436C1E81919800BE3AFF /* Domain */,
+				57C24C0B1F0551B80040B399 /* Presentation */,
 			);
 			path = Random1;
 			sourceTree = "<group>";
@@ -153,21 +204,25 @@
 			path = Random1Tests;
 			sourceTree = "<group>";
 		};
-		9A94436C1E81919800BE3AFF /* Models */ = {
+		9A94436C1E81919800BE3AFF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9A38E4EF1E82C4A50040B99E /* Program.swift */,
-				9AE5B7431E8932F800741548 /* Podcast.swift */,
+				57C24C0A1F0551900040B399 /* Model */,
+				57C24C221F0B95120040B399 /* Interactor */,
+				57C24C231F0B951E0040B399 /* Repository */,
 			);
-			name = Models;
+			name = Domain;
 			sourceTree = "<group>";
 		};
 		9A94436E1E8191AB00BE3AFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9A94434C1E818A7800BE3AFF /* ProgramViewController.swift */,
+				9A94434C1E818A7800BE3AFF /* ProgramsViewController.swift */,
 				9AE5B7411E892C7700741548 /* HourPodcastsViewController.swift */,
 				9AB0B4B61E8A8B2D00B9D268 /* CustomAVPlayerViewController.swift */,
+				57C24C0F1F0A3D3A0040B399 /* TabBarController.swift */,
+				57C24C121F0A44A50040B399 /* NavigationController.swift */,
+				57C24C141F0A67A90040B399 /* DownloadsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -249,8 +304,8 @@
 				TargetAttributes = {
 					9A9443461E818A7800BE3AFF = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = LUJK7A4RXY;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 4R5U8YPQF8;
+						ProvisioningStyle = Manual;
 					};
 					9A94435C1E818A7900BE3AFF = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -315,7 +370,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		34E1012AAA7356B175A7C480 /* [CP] Embed Pods Frameworks */ = {
@@ -390,7 +445,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -400,13 +455,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C24C131F0A44A50040B399 /* NavigationController.swift in Sources */,
 				9A38E4F01E82C4A50040B99E /* Program.swift in Sources */,
+				57C24C151F0A67A90040B399 /* DownloadsViewController.swift in Sources */,
 				9AE5B7441E8932F800741548 /* Podcast.swift in Sources */,
 				9A38E4EE1E82BA4C0040B99E /* ProgramTableViewCell.swift in Sources */,
+				57C24C101F0A3D3A0040B399 /* TabBarController.swift in Sources */,
 				9AE5B7421E892C7700741548 /* HourPodcastsViewController.swift in Sources */,
 				9A94434B1E818A7800BE3AFF /* AppDelegate.swift in Sources */,
 				9AE5B7461E89338900741548 /* PodcastTableViewCell.swift in Sources */,
-				9A94434D1E818A7800BE3AFF /* ProgramViewController.swift in Sources */,
+				57C24C251F0B953E0040B399 /* ProgramsInteractor.swift in Sources */,
+				57C24C0E1F055D400040B399 /* ProgramsViewModel.swift in Sources */,
+				9A94434D1E818A7800BE3AFF /* ProgramsViewController.swift in Sources */,
 				9AB0B4B71E8A8B2D00B9D268 /* CustomAVPlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,11 +640,15 @@
 			baseConfigurationReference = 44E1BD45609988EF364B00C6 /* Pods-Random1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LUJK7A4RXY;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joan Domingo (74KK9HZCG5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joan Domingo (74KK9HZCG5)";
+				DEVELOPMENT_TEAM = 4R5U8YPQF8;
 				INFOPLIST_FILE = Random1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cat.xojan.random1;
+				PRODUCT_BUNDLE_IDENTIFIER = cat.joan.random1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a783e0f1-febe-446e-a9bd-98b7f18a90f4";
+				PROVISIONING_PROFILE_SPECIFIER = "Joan Domingo";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -594,11 +658,15 @@
 			baseConfigurationReference = 4B8048AD79FE314A745C6FCA /* Pods-Random1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LUJK7A4RXY;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joan Domingo (4R5U8YPQF8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joan Domingo (4R5U8YPQF8)";
+				DEVELOPMENT_TEAM = 4R5U8YPQF8;
 				INFOPLIST_FILE = Random1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cat.xojan.random1;
+				PRODUCT_BUNDLE_IDENTIFIER = cat.joan.random1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a783e0f1-febe-446e-a9bd-98b7f18a90f4";
+				PROVISIONING_PROFILE_SPECIFIER = Random1.distributionProfile;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

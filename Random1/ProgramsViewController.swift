@@ -1,5 +1,5 @@
 //
-//  ProgramViewController.swift
+//  ProgramsViewController.swift
 //  Random1
 //
 //  Created by Joan Domingo Sallent on 21/03/2017.
@@ -7,27 +7,50 @@
 //
 
 import UIKit
-import Alamofire
+/*import Alamofire
 import SwiftyJSON
-import Kingfisher
+import Kingfisher*/
+import RxSwift
+import RxCocoa
 
-class ProgramViewController: UITableViewController {
+class ProgramsViewController: UITableViewController {
     
-    var programs = [Program]()
+    // MARK: - Properties
+    
+    private let programsViewModel: ProgramsViewModelType
+    private let cellIdentifier = "ProgramTableViewCell" // Table view cells are reused and should be dequeued using a cell identifier.
+    private let disposeBag = DisposeBag()
+    
+    // MARK: - Views
+    
     var messageFrame = UIView()
     var activityIndicator = UIActivityIndicatorView()
     
-
+    // MARK: - Initialization
+    
+    init() {
+        self.programsViewModel = ProgramsViewModel()
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadPrograms()
+        setupView()
+        setupBindings()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     // MARK: - Table view data source
 
@@ -36,23 +59,20 @@ class ProgramViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return programs.count
+        return 1 //programs.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "ProgramTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ProgramTableViewCell  else {
             fatalError("The dequeued cell is not an instance of ProgramTableViewCell.")
         }
         
         // Fetches the appropriate program for the data source layout.
-        let program = programs[indexPath.row]
+        // let program = programs[indexPath.row]
         
-        cell.programNameLabel.text = program.name
-        cell.programImageView.kf.setImage(with: program.imageUrl)
+        // cell.programNameLabel.text = program.name
+        // cell.programImageView.kf.setImage(with: program.imageUrl)
         
         return cell
     }
@@ -63,7 +83,7 @@ class ProgramViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        switch(segue.identifier ?? "") {
+        /*switch(segue.identifier ?? "") {
             
         case "ShowPodcasts":
             
@@ -84,12 +104,27 @@ class ProgramViewController: UITableViewController {
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
-        }
+        }*/
     }
     
     //MARK: Private Methods
     
-    private func loadPrograms() {
+    private func setupView() {
+        tableView.register(ProgramTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+    }
+    
+    private func setupBindings() {
+        self.title = "Some random title"
+        tableView.dataSource = nil
+        
+        programsViewModel.programs.bind(to: tableView.rx.items(cellIdentifier: "ProgramTableViewCell")) { index, model, cell in
+            cell.textLabel?.text = model.name
+        }
+        .disposed(by: disposeBag)
+    }
+    
+    /*private func loadPrograms() {
         progressBarDisplayer()
         
         Alamofire.request("http://www.rac1.cat/audioteca/api/app/v1/programs").validate().responseJSON { response in
@@ -118,7 +153,7 @@ class ProgramViewController: UITableViewController {
                 self.present(alertController, animated: true)
             }
         }
-    }
+    }*/
     
     func progressBarDisplayer() {
         messageFrame = UIView(frame: CGRect(x: view.frame.midX - 25, y: view.frame.midY - 25 , width: 50, height: 50))

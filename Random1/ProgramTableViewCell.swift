@@ -11,19 +11,13 @@ import UIKit
 class ProgramTableViewCell: UITableViewCell {
     
     //MARK: Properties
-    @IBOutlet weak var programImageView: UIImageView!
-    @IBOutlet weak var programNameLabel: UILabel!
+    @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var program: Program? {
+        didSet {
+            // TODO
+            nameLabel.text = program?.name
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

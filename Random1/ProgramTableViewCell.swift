@@ -6,18 +6,39 @@
 //
 //
 
-import UIKit
+import Foundation
+import Kingfisher
 
 class ProgramTableViewCell: UITableViewCell {
     
     //MARK: Properties
-    @IBOutlet weak var iconView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
     
-    var program: Program? {
-        didSet {
-            // TODO
-            nameLabel.text = program?.name
-        }
+    var iconPhoto: UIImageView!
+    var titleLabel: UILabel!
+    
+    var cellHeight = CGFloat()
+    
+    // MARK: - Lifecycle
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        iconPhoto = UIImageView()
+        iconPhoto.frame = CGRect(x: 20, y: 10, width: 50, height: 50)
+        iconPhoto.layer.borderWidth = 1
+        iconPhoto.layer.masksToBounds = false
+        iconPhoto.layer.borderColor = UIColor.red.cgColor
+        iconPhoto.layer.cornerRadius = iconPhoto.frame.height/2
+        iconPhoto.clipsToBounds = true
+        contentView.addSubview(iconPhoto)
+        
+        titleLabel = UILabel()
+        titleLabel.frame = CGRect(x: iconPhoto.frame.origin.x + iconPhoto.frame.width + 10 , y: 10, width: 100, height: iconPhoto.frame.height)
+        titleLabel.textColor = UIColor.black
+        contentView.addSubview(titleLabel)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -11,8 +11,8 @@ import RxSwift
 class ProgramsInteractor {
     
     func loadPrograms() -> Observable<[Program]> {
-        let program1 = Program(id: "p1", name: "program1", imageUrl: "http://example.com/image")
-        let program2 = Program(id: "p2", name: "program2", imageUrl: "http://example.com/image")
+        let program1 = Program(id: "p1", name: "program1", imageUrl: "http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg")
+        let program2 = Program(id: "p2", name: "program2", imageUrl: "http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg")
         
         var programList = [Program]()
         programList.append(program1!)

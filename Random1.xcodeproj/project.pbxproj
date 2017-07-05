@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5702DB3A1F0D2A010047AA16 /* RemoteProgramRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702DB391F0D2A010047AA16 /* RemoteProgramRepository.swift */; };
 		5720C6991EB64354006B85E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5720C69B1EB64354006B85E4 /* Localizable.strings */; };
 		5720C69E1EB64355006B85E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5720C6A01EB64355006B85E4 /* InfoPlist.strings */; };
 		5720C6A31EB64356006B85E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5720C6A51EB64356006B85E4 /* InfoPlist.strings */; };
@@ -49,6 +50,7 @@
 		411FF3905E7FD2DB3D62E0EE /* Pods_Random1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Random1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E1BD45609988EF364B00C6 /* Pods-Random1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Random1/Pods-Random1.debug.xcconfig"; sourceTree = "<group>"; };
 		4B8048AD79FE314A745C6FCA /* Pods-Random1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Random1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Random1/Pods-Random1.release.xcconfig"; sourceTree = "<group>"; };
+		5702DB391F0D2A010047AA16 /* RemoteProgramRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteProgramRepository.swift; sourceTree = "<group>"; };
 		5720C68E1EB6083D006B85E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5720C68F1EB6083E006B85E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		5720C6901EB60849006B85E4 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -107,6 +109,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5702DB381F0D29D30047AA16 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5702DB391F0D2A010047AA16 /* RemoteProgramRepository.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		5702DB3B1F0D34AF0047AA16 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Commons;
+			sourceTree = "<group>";
+		};
 		57C24C0A1F0551900040B399 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,13 +157,6 @@
 				57C24C241F0B953E0040B399 /* ProgramsInteractor.swift */,
 			);
 			name = Interactor;
-			sourceTree = "<group>";
-		};
-		57C24C231F0B951E0040B399 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Repository;
 			sourceTree = "<group>";
 		};
 		9A38E4EC1E82B9DA0040B99E /* View */ = {
@@ -188,6 +198,8 @@
 				9A9443531E818A7800BE3AFF /* Assets.xcassets */,
 				9A9443581E818A7800BE3AFF /* Info.plist */,
 				9A94434A1E818A7800BE3AFF /* AppDelegate.swift */,
+				5702DB3B1F0D34AF0047AA16 /* Commons */,
+				5702DB381F0D29D30047AA16 /* Data */,
 				9A94436C1E81919800BE3AFF /* Domain */,
 				57C24C0B1F0551B80040B399 /* Presentation */,
 			);
@@ -209,7 +221,6 @@
 			children = (
 				57C24C0A1F0551900040B399 /* Model */,
 				57C24C221F0B95120040B399 /* Interactor */,
-				57C24C231F0B951E0040B399 /* Repository */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -463,6 +474,7 @@
 				57C24C101F0A3D3A0040B399 /* TabBarController.swift in Sources */,
 				9AE5B7421E892C7700741548 /* HourPodcastsViewController.swift in Sources */,
 				9A94434B1E818A7800BE3AFF /* AppDelegate.swift in Sources */,
+				5702DB3A1F0D2A010047AA16 /* RemoteProgramRepository.swift in Sources */,
 				9AE5B7461E89338900741548 /* PodcastTableViewCell.swift in Sources */,
 				57C24C251F0B953E0040B399 /* ProgramsInteractor.swift in Sources */,
 				57C24C0E1F055D400040B399 /* ProgramsViewModel.swift in Sources */,

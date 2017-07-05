@@ -8,17 +8,20 @@
 
 import RxSwift
 
+protocol ProgramRepository {
+    func fetchPrograms() -> Observable<[Program]>
+}
+
 class ProgramsInteractor {
     
+    private let programRepository: ProgramRepository
+    
+    init() {
+        programRepository = RemoteProgramRepository()
+    }
+    
     func loadPrograms() -> Observable<[Program]> {
-        let program1 = Program(id: "p1", name: "program1", imageUrl: "http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg")
-        let program2 = Program(id: "p2", name: "program2", imageUrl: "http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg")
-        
-        var programList = [Program]()
-        programList.append(program1!)
-        programList.append(program2!)
-        
-        return Observable.from(optional: programList)
+        return programRepository.fetchPrograms()
     }
     
 }

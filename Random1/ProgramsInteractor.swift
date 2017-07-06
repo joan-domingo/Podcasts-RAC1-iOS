@@ -22,6 +22,11 @@ class ProgramsInteractor {
     
     func loadPrograms() -> Observable<[Program]> {
         return programRepository.fetchPrograms()
+            .flatMap { programs -> Observable<Program> in
+                return Observable.from(programs)
+            }
+            .filter { p -> Bool in p.active == true}
+            .toArray()
     }
     
 }

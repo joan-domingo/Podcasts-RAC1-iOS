@@ -36,7 +36,8 @@ class RemoteProgramRepository: ProgramRepository {
         for jsonProgram in JSON(value)["result"].array! {
             let program = Program(id: jsonProgram["id"].string!,
                                   name: jsonProgram["title"].string!,
-                                  imageUrl: jsonProgram["images"]["person-small"].string!)
+                                  imageUrl: jsonProgram["images"]["person-small"].string!,
+                                  active: jsonProgram["active"].bool!)
             programList.append(program!)
         }
         

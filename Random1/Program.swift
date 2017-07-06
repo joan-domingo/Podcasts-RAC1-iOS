@@ -14,10 +14,11 @@ class Program: NSObject {
     var id: String
     var name: String
     var imageUrl: URL
+    var active: Bool
     
     //MARK: Initialization
     
-    init?(id: String, name: String, imageUrl: String) {
+    init?(id: String, name: String, imageUrl: String, active: Bool) {
         
         // The id must not be empty
         guard !id.isEmpty else {
@@ -33,6 +34,7 @@ class Program: NSObject {
         self.id = id
         self.name = name
         self.imageUrl = URL(string: imageUrl)!
+        self.active = active
     }
     
 }

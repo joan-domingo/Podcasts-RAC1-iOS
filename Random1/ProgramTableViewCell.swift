@@ -33,7 +33,7 @@ class ProgramTableViewCell: UITableViewCell {
         contentView.addSubview(iconPhoto)
         
         titleLabel = UILabel()
-        titleLabel.frame = CGRect(x: iconPhoto.frame.origin.x + iconPhoto.frame.width + 10 , y: 10, width: 100, height: iconPhoto.frame.height)
+        titleLabel.frame = CGRect(x: iconPhoto.frame.origin.x + iconPhoto.frame.width + 10 , y: 10, width: contentView.frame.width - iconPhoto.frame.width - 10, height: iconPhoto.frame.height)
         titleLabel.textColor = UIColor.black
         contentView.addSubview(titleLabel)
     }

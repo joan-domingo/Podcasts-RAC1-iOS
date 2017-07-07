@@ -14,7 +14,7 @@ protocol ProgramsViewModelType: class {
 }
 
 class ProgramsViewModel: ProgramsViewModelType {
-    
+
     let programs: Observable<[Program]>
     
     private let programsInteractor: ProgramsInteractor
@@ -23,10 +23,6 @@ class ProgramsViewModel: ProgramsViewModelType {
         self.programsInteractor = programsInteractor
         
         self.programs = self.programsInteractor.loadPrograms()
-            .catchError { error in
-                print("Error: \(error)")
-                return Observable.just([])
-            }
             .observeOn(MainScheduler.instance)
     }
     

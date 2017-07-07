@@ -18,6 +18,7 @@ class ProgramsViewController: UIViewController, UITableViewDelegate, UITableView
     private let programsViewModel: ProgramsViewModelType
     private let cellIdentifier = "ProgramTableViewCell"
     private let disposeBag = DisposeBag()
+    private var programList = [Program]()
     
     // MARK: - Views
     
@@ -52,7 +53,7 @@ class ProgramsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
-        //print("Value: \(myArray[indexPath.row])")
+        print("Name: \(programList[indexPath.row].name)")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -60,11 +61,21 @@ class ProgramsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2 // myArray.count
+        return programList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ProgramTableViewCell else {
+            fatalError("The dequeued cell is not an instance of ProgramTableViewCell.")
+        }
+        
+        // Fetches the appropriate program for the data source layout.
+        let program = programList[indexPath.row]
+        
+        cell.titleLabel?.text = program.name
+        cell.iconPhoto?.kf.setImage(with: program.imageUrl)
+        
+        return cell
     }
     
     //MARK: Private Methods
@@ -85,13 +96,18 @@ class ProgramsViewController: UIViewController, UITableViewDelegate, UITableView
     
     private func setupBindings() {
         self.title = NSLocalizedString("Programs", comment: "programs table title")
-        myTableView.dataSource = nil
         
-        programsViewModel.programs.bind(to: myTableView.rx.items(cellIdentifier: cellIdentifier, cellType: ProgramTableViewCell.self)) { row, element, cell in
-            cell.titleLabel?.text = element.name
-            cell.iconPhoto?.kf.setImage(with: element.imageUrl)
-        }
-        .disposed(by: disposeBag)
+        programsViewModel.programs
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { programs in
+                    self.programList = programs
+                    self.myTableView.reloadData()
+            },
+                onError: { error in
+                    print(error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
     }
 
 }

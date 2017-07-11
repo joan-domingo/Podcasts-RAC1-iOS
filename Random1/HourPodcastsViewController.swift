@@ -7,27 +7,43 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 import Kingfisher
+import RxSwift
+import RxCocoa
 
-class HourPodcastsViewController: UITableViewController {
+class HourPodcastsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Properties
     
-    /*
-     This value is passed by `ProgramsViewController` in `prepare(for:sender:)`.
-     */
-    var program: Program?
+    private let podcastsViewModel: PodcastsViewModelType
+    private let cellIdentifier = "PodcastTableViewCell"
+    private var selectedProgram: Program
+    private var podcastList = [Podcast]()
+    private let disposeBag = DisposeBag()
     
-    var podcasts = [Podcast]()
-    var messageFrame = UIView()
-    var activityIndicator = UIActivityIndicatorView()
+    // MARK: - Views
+    
+    private var myTableView: UITableView!
+    
+    // MARK: - Initialization
+    
+    init(program: Program) {
+        self.selectedProgram = program
+        self.podcastsViewModel = PodcastsViewModel(program: program)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadPodcasts()
+        setupView()
+        setupBindings()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,34 +51,70 @@ class HourPodcastsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedPodcast: Podcast = podcastList[indexPath.row]
+        print("Num: \(indexPath.row)")
+        print("Name: \(selectedPodcast.title)")
+        
+        /*let destination = HourPodcastsViewController(program: selectedProgram)
+        navigationController?.pushViewController(destination, animated: true)*/
+        
+        // TODO
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return podcasts.count
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "PodcastTableViewCell"
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return podcastList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PodcastTableViewCell else {
             fatalError("The dequeued cell is not an instance of PodcastTableViewCell.")
         }
         
-        // Fetches the appropriate program for the data source layout.
-        let podcast = podcasts[indexPath.row]
-        
-        cell.podcastTitleLabel.text = podcast.title
-        cell.podcastImageView.kf.setImage(with: podcast.imageUrl)
+        let podcast = podcastList[indexPath.row]
+        cell.titleLabel?.text = podcast.title
+        cell.iconPhoto?.kf.setImage(with: podcast.imageUrl)
         
         return cell
     }
     
+    //MARK: Private Methods
+    
+    private func setupView() {
+        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        let displayWidth: CGFloat = self.view.frame.width
+        let displayHeight: CGFloat = self.view.frame.height
+        
+        myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
+        myTableView.register(PodcastTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        myTableView.dataSource = self
+        myTableView.delegate = self
+        self.view.addSubview(myTableView)
+    }
+    
+    private func setupBindings() {
+        self.title = selectedProgram.name
+        
+        podcastsViewModel.podcasts
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { podcasts in
+                    self.podcastList = podcasts
+                    self.myTableView.reloadData()
+            },
+                onError: { error in
+                    print(error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    /*
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -97,10 +149,8 @@ class HourPodcastsViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadPodcasts() {
-        progressBarDisplayer()
         
-        Alamofire.request("http://www.rac1.cat/audioteca/api/app/v1/sessions/" + (program?.id)!).validate().responseJSON { response in
-            self.hideProgressBar()
+        Alamofire.request("http://www.rac1.cat/audioteca/api/app/v1/sessions/" + (program.id)).validate().responseJSON { response in
             
             switch response.result {
                 
@@ -108,7 +158,7 @@ class HourPodcastsViewController: UITableViewController {
                 
                 for jsonPodcast in JSON(value)["result"].array! {
                     let podcast = Podcast(title: jsonPodcast["appMobileTitle"].string!,
-                                          imageUrl: (self.program?.imageUrl)!,
+                                          imageUrl: (self.program.imageUrl),
                                           audioUrl: jsonPodcast["path"].string!)
                     self.podcasts.append(podcast!)
                 }
@@ -125,23 +175,5 @@ class HourPodcastsViewController: UITableViewController {
                 self.present(alertController, animated: true)
             }
         }
-    }
-    
-    func progressBarDisplayer() {
-        messageFrame = UIView(frame: CGRect(x: view.frame.midX - 25, y: view.frame.midY - 25 , width: 50, height: 50))
-        messageFrame.layer.cornerRadius = 15
-        messageFrame.backgroundColor = UIColor(white: 0, alpha: 0.7)
-        
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        activityIndicator.startAnimating()
-        
-        messageFrame.addSubview(activityIndicator)
-        view.addSubview(messageFrame)
-    }
-    
-    func hideProgressBar()  {
-        messageFrame.removeFromSuperview()
-    }
-    
+    }*/
 }

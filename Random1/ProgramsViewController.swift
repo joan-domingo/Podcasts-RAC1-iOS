@@ -52,8 +52,12 @@ class ProgramsViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - Table
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedProgram: Program = programList[indexPath.row]
         print("Num: \(indexPath.row)")
-        print("Name: \(programList[indexPath.row].name)")
+        print("Name: \(selectedProgram.name)")
+        
+        let destination = HourPodcastsViewController(program: selectedProgram)
+        navigationController?.pushViewController(destination, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,9 +73,7 @@ class ProgramsViewController: UIViewController, UITableViewDelegate, UITableView
             fatalError("The dequeued cell is not an instance of ProgramTableViewCell.")
         }
         
-        // Fetches the appropriate program for the data source layout.
         let program = programList[indexPath.row]
-        
         cell.titleLabel?.text = program.name
         cell.iconPhoto?.kf.setImage(with: program.imageUrl)
         
@@ -81,8 +83,6 @@ class ProgramsViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: Private Methods
     
     private func setupView() {
-        //tableView.register(ProgramTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height

@@ -2,7 +2,7 @@
 //  Random1Tests.swift
 //  Random1Tests
 //
-//  Created by Sebastian Maschner on 21/03/2017.
+//  Created by Joan Domingo on 21/03/2017.
 //
 //
 
